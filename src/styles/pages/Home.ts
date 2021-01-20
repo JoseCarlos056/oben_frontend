@@ -8,13 +8,11 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   h1 {
-    font-size: 54px;
+    font-size: 3.375rem;
     color: ${props => props.theme.colors.primary};
     margin-top: 40px;
   }
   p {
-    margin-top: 24px;
-    font-size: 24px;
     line-height: 32px;
   }
   main {
@@ -31,23 +29,40 @@ export const Container = styled.div`
       justify-content: center;
       img {
         width: 100%;
+        height: 100%;
       }
     }
     .auth-panel {
+      box-shadow: -5px 3px 5px -3px rgba(0, 0, 0, 0.65);
       height: 100vh;
       flex: 30%;
       background: #6666cc;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: space-around;
+      .change-input {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        div {
+          width: 2px;
+          height: 1.1rem;
+          background-color: #f2f2f2;
+          margin: 5px;
+        }
+        p {
+          font-size: 1.1rem;
+        }
+      }
       .input {
-        width: 80%;
+        width: 60%;
         p {
           display: flex;
           align-items: center;
           justify-content: first baseline;
-          font-size: 15px;
+          font-size: 0.938rem;
           font-weight: bold;
           svg {
             margin-right: 5px;
@@ -66,11 +81,10 @@ export const Container = styled.div`
         }
       }
       .logIn {
-        width: 80%;
+        width: 60%;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-top: 25px;
         .social-media {
           .list-social-media {
             list-style-type: none;
@@ -124,7 +138,7 @@ export const Container = styled.div`
         }
       }
       .suggest {
-        font-size: 15px;
+        font-size: 0.938rem;
         a {
           cursor: pointer;
           color: #57b0c9;
@@ -137,9 +151,7 @@ export const Container = styled.div`
         }
       }
       .copyright {
-        position: absolute;
-        bottom: 8px;
-        font-size: 12px;
+        font-size: 0.75rem;
       }
     }
   }

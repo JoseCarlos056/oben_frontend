@@ -16,6 +16,11 @@ const Home: React.FC = () => {
           <img src={vetorlogin} alt="" />
         </div>
         <div className="auth-panel">
+          <div className="change-input">
+            <p>Login</p>
+            <div></div>
+            <p>Cadastro</p>
+          </div>
           <h1>Bem vindo de volta!</h1>
           <h2>Login</h2>
           <div className="input">
