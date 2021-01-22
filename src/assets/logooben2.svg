@@ -38,14 +38,14 @@ viewBox="0 0 30645.28 21637.16"
   <style type="text/css">
    <![CDATA[
     @font-face { font-family:"Poppins";font-variant:normal;font-style:normal;font-weight:bold;src:url("#FontID0") format(svg)}
-    .str0 {stroke:#6666CC;stroke-width:141.11;stroke-miterlimit:22.9256}
+    .str0 {stroke:#59599E;stroke-width:141.11;stroke-miterlimit:22.9256}
     .fil0 {fill:none}
     .fil13 {fill:#3F3D56}
     .fil12 {fill:#57B0C9}
-    .fil10 {fill:#6666CC}
+    .fil10 {fill:#59599E}
     .fil2 {fill:#2F2E41;fill-rule:nonzero}
     .fil7 {fill:#3F3D56;fill-rule:nonzero}
-    .fil8 {fill:#6666CC;fill-rule:nonzero}
+    .fil8 {fill:#59599E;fill-rule:nonzero}
     .fil6 {fill:#CCCCCC;fill-rule:nonzero}
     .fil5 {fill:#E6E6E6;fill-rule:nonzero}
     .fil3 {fill:#F2F2F2;fill-rule:nonzero}

@@ -8,17 +8,14 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   h1 {
-    font-size: 1.7rem;
+    font-size: 2em;
     color: ${props => props.theme.colors.primary};
   }
-  h2 {
+  /* h2 {
     font-size: 1.3rem;
     color: ${props => props.theme.colors.primary};
     margin: 0px;
-  }
-  p {
-    line-height: 32px;
-  }
+  } */
   main {
     width: 100vw;
     height: 100vh;
@@ -39,7 +36,7 @@ export const Container = styled.div`
       box-shadow: -5px 3px 5px -3px rgba(0, 0, 0, 0.65);
       height: 100vh;
       position: relative;
-      background: #6666cc;
+      background: #59599e;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -53,10 +50,9 @@ export const Container = styled.div`
         p {
           font-size: 0.8rem;
           text-align: center;
-          line-height: 18px;
         }
         h2 {
-          margin-top: 24px !important;
+          margin-top: 24px;
         }
         .change-input {
           width: 100%;
@@ -71,34 +67,57 @@ export const Container = styled.div`
             background-color: #f2f2f2;
             margin: 5px;
           }
-          p {
-            font-size: 1.1rem;
+          h3 {
+            margin-top: 0px !important;
+            cursor: pointer;
+            &:after {
+              content: '';
+              width: 80%;
+              height: 2px;
+              background-color: currentColor;
+              display: block;
+              margin: 2px auto;
+            }
           }
         }
         .input {
+          position: relative;
+          display: flex;
+          align-items: center;
           width: 60%;
           margin: 8px 0px;
-          p {
+          i {
+            width: 20%;
+            height: 100%;
             display: flex;
             align-items: center;
-            justify-content: first baseline;
-            font-size: 0.938rem;
-            font-weight: bold;
-            line-height: 32px;
+            justify-content: center;
+            background-color: ${props => props.theme.colors.primary};
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
             svg {
-              margin-right: 5px;
-              width: 18px;
-              height: 18px;
+              color: #59599e;
+              width: 40%;
+              height: 40%;
+            }
+            &:after {
+              content: '';
+              width: 2px;
+              height: 60%;
+              color: #59599e;
+              background-color: currentColor;
+              display: inline-block;
+              margin-left: 8px;
             }
           }
+
           input {
             outline: none;
             width: 100%;
             height: 2.813rem;
-            border-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
             border: none;
-            padding-right: 20px;
-            padding-left: 20px;
           }
         }
         .logIn {
@@ -130,7 +149,7 @@ export const Container = styled.div`
                 &:hover {
                   background-color: #f2f2f2;
                   svg {
-                    color: #6666cc;
+                    color: #59599e;
                   }
                 }
               }
@@ -154,7 +173,7 @@ export const Container = styled.div`
             &:hover {
               background-color: #f2f2f2;
               svg {
-                color: #6666cc;
+                color: #59599e;
               }
             }
           }
@@ -176,6 +195,7 @@ export const Container = styled.div`
       }
 
       .copyright {
+        margin: 8px 0px;
         font-size: 0.75rem;
       }
     }
