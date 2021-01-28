@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
-import { Container } from '../styles/pages/Home'
+import { Container } from '../styles/pages/Login'
 import vetorlogin from '../assets/logooben2.svg'
 import Login from './login/login'
 import Register from './login/register'
