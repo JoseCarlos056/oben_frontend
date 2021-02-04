@@ -24,14 +24,17 @@ export const Container = styled.div`
   }
   main {
     width: 100vw;
-    padding: 10px;
+    padding: 60px;
     margin-top: 55px;
     position: relative;
-    background: #f2f2f2;
+    
+    
+    
+    .masonry{
+    position: relative;
     column-count:5;
     column-gap: 10px;
-    
-    figure{
+      figure{
       position: relative;
       margin: 0;
       display: flex;
@@ -42,6 +45,8 @@ export const Container = styled.div`
         border-radius: 4px;
       }
     }
+    }
+    
   
   }
 `

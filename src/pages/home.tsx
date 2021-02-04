@@ -1,14 +1,14 @@
 import React from 'react'
 import Head from 'next/head'
 import rocktseatLogo from '../assets/rocketseat.svg'
-import img from '../assets/img (1).jpeg'
-import img2 from '../assets/img (2).jpeg'
-import img3 from '../assets/img (3).jpeg'
-import img4 from '../assets/img (4).jpeg'
-import img5 from '../assets/img (5).jpeg'
-import img6 from '../assets/img (6).jpeg'
-import img7 from '../assets/img (7).jpeg'
-import img8 from '../assets/img (8).jpeg'
+import img from '../assets/img.jpg'
+import img2 from '../assets/img.jpg'
+import img3 from '../assets/img2.jpg'
+import img4 from '../assets/img.jpg'
+import img5 from '../assets/rocketseat.svg'
+import img6 from '../assets/img.jpg'
+import img7 from '../assets/img3.jpg'
+import img8 from '../assets/img.jpg'
 import { Container } from '../styles/pages/Home'
 
 const Home: React.FC = () => {
@@ -26,6 +26,7 @@ const Home: React.FC = () => {
         }}>Sair</a>
       </header>
       <main>
+        <div className="masonry">
         <figure>
         <img src={img} alt="oben logo" />
         </figure>
@@ -50,6 +51,8 @@ const Home: React.FC = () => {
         <figure>
         <img src={img8} alt="oben logo" />
         </figure>
+        </div>
+        
       
       </main>
     </Container>
