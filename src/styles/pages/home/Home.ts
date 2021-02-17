@@ -1,8 +1,6 @@
 import styled from 'styled-components'
-interface IContainer {
-  dragged: boolean
-}
-export const Container = styled.div<IContainer>`
+
+export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -40,39 +38,6 @@ export const Container = styled.div<IContainer>`
         img {
           width: 100%;
           border-radius: 4px;
-        }
-      }
-    }
-    .drag-area {
-      z-index: 2;
-      display: ${props => (props.dragged ? 'flex' : 'none')};
-      background-color: rgb(0 0 0 / 25%);
-      height: 100%;
-      width: 100%;
-      position: fixed;
-      top: 45px;
-      left: 0;
-      align-items: center;
-      justify-content: center;
-      .area {
-        background: rgb(255 255 255 / 92%);
-        width: 80%;
-        height: 80%;
-        border: 5px solid #727272;
-        border-style: dashed;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        img {
-          width: 60%;
-          height: 60%;
-        }
-        p {
-          margin-top: 8px;
-          font-size: 2em;
-          font-weight: bold;
-          color: #727272;
         }
       }
     }

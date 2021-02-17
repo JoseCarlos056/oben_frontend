@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import rocktseatLogo from '../assets/rocketseat.svg'
-import Dropzone from './home/dropzone'
 import img from '../assets/img.jpg'
 import img2 from '../assets/img.jpg'
 import img3 from '../assets/img2.jpg'
@@ -11,28 +10,17 @@ import img6 from '../assets/img.jpg'
 import img7 from '../assets/img3.jpg'
 import img8 from '../assets/img.jpg'
 import { Container } from '../styles/pages/home/Home'
-import { useDropzone } from 'react-dropzone'
 import FileList from './home/filelist'
 const Home: React.FC = () => {
   const [dragged, setDragged] = useState<boolean>(false)
-  const onDrop = acceptedFiles => {
-    console.log(acceptedFiles)
-  }
   const onDragEnter = e => {
     const event = e as Event
     setDragged(true)
-    console.log('enter')
     event.stopPropagation()
   }
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
-  useEffect(() => {
-    if (!isDragActive) {
-      setDragged(false)
-    }
-  }, [isDragActive])
+
   return (
-    <Container dragged={dragged}>
-      <FileList />
+    <Container>
       <Head>
         <title>Oben - Página Inicial</title>
       </Head>
@@ -73,7 +61,7 @@ const Home: React.FC = () => {
             <img src={img8} alt="oben logo" />
           </figure>
         </div>
-        <Dropzone setDragged={setDragged} />
+        <FileList setDragged={setDragged} dragged={dragged} />
       </main>
     </Container>
   )
