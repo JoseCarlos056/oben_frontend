@@ -13,7 +13,7 @@ const Dropzone: React.FC<IDropzone> = () => {
   const { getInputProps } = useDropzone({ onDrop })
 
   return (
-    
+    <></>
   )
 }
 export default Dropzone
