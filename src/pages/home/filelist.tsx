@@ -89,7 +89,7 @@ const FileList: React.FC<IFileList> = props => {
                         path: { stroke: '#7159c1' }
                       }}
                       strokeWidth={10}
-                      percentage={file.progress}
+                      value={file.progress}
                     />
                   )}
                   {file.url && (
