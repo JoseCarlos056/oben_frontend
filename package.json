@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "filesize": "^6.1.0",
     "lodash": "^4.17.20",
     "next": "10.0.5",

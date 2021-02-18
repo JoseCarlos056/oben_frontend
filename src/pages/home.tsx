@@ -28,6 +28,7 @@ const Home: React.FC = () => {
         <img src={rocktseatLogo} alt="oben logo" />
         <a
           onClick={() => {
+            localStorage.clear()
             window.location.href = '/'
           }}
         >

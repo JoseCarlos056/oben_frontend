@@ -3,13 +3,14 @@ import { CircularProgressbar } from 'react-circular-progressbar'
 import { useDropzone } from 'react-dropzone'
 import { uniqueId } from 'lodash'
 import filesize from 'filesize'
+import api from '../../services/axios'
 import {
   Container,
   ListFiles,
   Preview,
   FileInfo
 } from '../../styles/pages/home/FileList'
-import { MdFileUpload, MdCheckCircle, MdError, MdLink } from 'react-icons/md'
+import { MdFileUpload, MdCheckCircle, MdError } from 'react-icons/md'
 import drag from '../../assets/drag.svg'
 interface IFileList {
   setDragged: Dispatch<SetStateAction<boolean>>
@@ -27,8 +28,9 @@ interface IFile {
   url: string
 }
 const FileList: React.FC<IFileList> = props => {
-  const [fileslist, setFileslist] = useState<IFile[]>([])
-  const onDrop = (files: Array<File>) => {
+  const [fileslist, setFileslist] = useState([])
+  const [peddingfilesprocess, setPeddingfilesprocess] = useState([])
+  const onDrop = files => {
     const uploadedFiles = files.map((file: File) => ({
       file,
       id: uniqueId(),
@@ -41,6 +43,54 @@ const FileList: React.FC<IFileList> = props => {
       url: null
     }))
     setFileslist([...fileslist, ...uploadedFiles])
+    setPeddingfilesprocess(uploadedFiles)
+  }
+  useEffect(() => {
+    if (peddingfilesprocess.length) {
+      peddingfilesprocess.forEach(processUpload)
+      setPeddingfilesprocess([])
+    }
+  }, [peddingfilesprocess])
+  const updateFile = (id, data) => {
+    setFileslist(
+      fileslist.map(uploadedFile => {
+        return id === uploadedFile.id
+          ? { ...uploadedFile, ...data }
+          : uploadedFile
+      })
+    )
+  }
+  const processUpload = uploadedFile => {
+    const data = new FormData()
+    data.append('file', uploadedFile.file)
+    api
+      .post('/file', data, {
+        onUploadProgress: e => {
+          const loaded = Number(e.loaded)
+          const total = Number(e.total)
+          const progress = Math.round((loaded * 100) / total)
+          updateFile(uploadedFile.id, {
+            progress
+          })
+        }
+      })
+      .then(response => {
+        const { id } = response.data
+        updateFile(uploadedFile.id, {
+          uploaded: true,
+          id
+        })
+      })
+      .catch(e => {
+        console.log(e)
+        updateFile(uploadedFile.id, {
+          error: true
+        })
+      })
+  }
+  const deleteFile = async id => {
+    await api.delete(`/file/${id}`)
+    setFileslist(fileslist.filter(file => file.id !== id))
   }
   const { getRootProps, isDragActive, getInputProps } = useDropzone({ onDrop })
   useEffect(() => {
@@ -76,7 +126,15 @@ const FileList: React.FC<IFileList> = props => {
                     <strong>{file.name}</strong>
                     <span>
                       {file.readableSize}{' '}
-                      {file.url && <button onClick={() => {}}>Excluir</button>}
+                      {file.uploaded && (
+                        <button
+                          onClick={() => {
+                            deleteFile(file.id)
+                          }}
+                        >
+                          Excluir
+                        </button>
+                      )}
                     </span>
                   </div>
                 </FileInfo>
@@ -92,19 +150,7 @@ const FileList: React.FC<IFileList> = props => {
                       value={file.progress}
                     />
                   )}
-                  {file.url && (
-                    <a
-                      href={file.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <MdLink
-                        style={{ marginRight: 8 }}
-                        size={24}
-                        color="#222"
-                      />
-                    </a>
-                  )}
+
                   {file.uploaded && <MdCheckCircle size={24} color="#78e5d5" />}
                   {file.error && <MdError size={24} color="#e57878" />}
                 </div>
