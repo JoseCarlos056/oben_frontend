@@ -17,17 +17,16 @@ const Home: React.FC = () => {
           <img src={vetorlogin} alt="" />
         </div>
         <div className="auth-panel">
+          <h2 className="head-login">Oben - Uploader</h2>
+
           <div className="login-container">
-            <div className="change-input">
-              <h3>Login</h3>
-              <div></div>
-              <h3>Cadastro</h3>
-            </div>
-            {login ? (
+            {login
+? (
               <Login setLogin={setLogin} />
-                ) : (
+            )
+: (
               <Register setLogin={setLogin} />
-                )}
+            )}
           </div>
           <p className="copyright">
             Copyright © All Rights Reserved - Intelligence

@@ -39,14 +39,18 @@ export const Container = styled.div`
       background: #59599e;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: center;
+      .head-login {
+        margin: 8px 0px;
+      }
       .login-container {
         display: flex;
         flex-direction: column;
         height: 100%;
         width: 100%;
         align-items: center;
+        justify-content: center;
         p {
           font-size: 0.8rem;
           text-align: center;
@@ -54,32 +58,7 @@ export const Container = styled.div`
         h2 {
           margin-top: 24px;
         }
-        .change-input {
-          width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin: 8px 0px;
-          margin-bottom: 35px;
-          div {
-            width: 2px;
-            height: 1.1rem;
-            background-color: #f2f2f2;
-            margin: 5px;
-          }
-          h3 {
-            margin-top: 0px !important;
-            cursor: pointer;
-            &:after {
-              content: '';
-              width: 80%;
-              height: 2px;
-              background-color: currentColor;
-              display: block;
-              margin: 2px auto;
-            }
-          }
-        }
+
         .input {
           position: relative;
           display: flex;

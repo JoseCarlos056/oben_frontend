@@ -37,12 +37,6 @@ const Login: React.FC<IProps> = props => {
   }
   return (
     <>
-      {' '}
-      <h1>Bem vindo de volta!</h1>
-      <p>
-        Digite o seu email e senha cadastrados e continue upando seus arquivos
-        com total segurança.
-      </p>
       <h2>Login</h2>
       <div className="input">
         <i>

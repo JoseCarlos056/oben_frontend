@@ -96,7 +96,7 @@ const FileList: React.FC<IFileList> = props => {
   useEffect(() => {
     console.log(isDragActive)
     if (!isDragActive) {
-      // props.setDragged(false)
+      props.setDragged(false)
     }
   }, [isDragActive])
   return (

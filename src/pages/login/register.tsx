@@ -40,11 +40,6 @@ const Register: React.FC<IProps> = props => {
   return (
     <>
       {' '}
-      <h1>Bem vindo!</h1>
-      <p>
-        Digite o seu email e senha para efetuar o cadastro e suba seus arquivos
-        com total segurança.
-      </p>
       <h2>Cadastro</h2>
       <div className="input">
         <i>
